@@ -1,6 +1,6 @@
 # 🧮 Calculator App
 
-![Imagem Ilustrativa](preview.jpg)
+![Imagem Ilustrativa](desktop-design-theme-1.jpg)
 
 Aplicativo de calculadora responsiva com **3 temas personalizáveis**.  
 Desenvolvido como solução para o desafio do **Frontend Mentor**.
