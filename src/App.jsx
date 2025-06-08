@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Calculator = () => {
+function App() {
   const [display, setDisplay] = useState('0');
   const [previousValue, setPreviousValue] = useState(null);
   const [operation, setOperation] = useState(null);
@@ -155,31 +155,31 @@ const Calculator = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center p-4 transition-colors duration-300"
+      className="min-h-screen flex items-center justify-center p-4 font-spartan transition-colors duration-300"
       style={{ backgroundColor: currentTheme.mainBg }}
     >
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-sm">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-8">
           <h1 
-            className="text-2xl font-bold"
+            className="text-3xl font-bold"
             style={{ color: currentTheme.textDisplay }}
           >
             calc
           </h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <span 
-              className="text-sm font-bold"
+              className="text-xs font-bold tracking-widest"
               style={{ color: currentTheme.textDisplay }}
             >
               THEME
             </span>
             <div className="flex flex-col items-center">
-              <div className="flex gap-2 mb-1">
+              <div className="flex gap-3 mb-1">
                 {[1, 2, 3].map((num) => (
                   <span 
                     key={num}
-                    className="text-xs w-4 text-center"
+                    className="text-xs w-4 text-center font-bold"
                     style={{ color: currentTheme.textDisplay }}
                   >
                     {num}
@@ -187,7 +187,7 @@ const Calculator = () => {
                 ))}
               </div>
               <div 
-                className="relative w-14 h-6 rounded-full p-1 cursor-pointer transition-colors duration-300"
+                className="relative w-16 h-6 rounded-full p-1 cursor-pointer transition-colors duration-300"
                 style={{ backgroundColor: currentTheme.toggleBg }}
                 onClick={toggleTheme}
               >
@@ -195,7 +195,7 @@ const Calculator = () => {
                   className="w-4 h-4 rounded-full transition-all duration-300"
                   style={{ 
                     backgroundColor: currentTheme.equalsKeyBg,
-                    transform: `translateX(${(theme - 1) * 16}px)`
+                    transform: `translateX(${(theme - 1) * 18}px)`
                   }}
                 />
               </div>
@@ -205,11 +205,11 @@ const Calculator = () => {
 
         {/* Display */}
         <div 
-          className="w-full h-20 rounded-lg mb-6 flex items-center justify-end px-6 text-right transition-colors duration-300"
+          className="w-full h-24 rounded-lg mb-6 flex items-center justify-end px-6 text-right transition-colors duration-300"
           style={{ backgroundColor: currentTheme.screenBg }}
         >
           <div 
-            className="text-3xl font-bold truncate"
+            className="text-4xl font-bold truncate"
             style={{ color: currentTheme.textDisplay }}
           >
             {formatDisplay(display)}
@@ -224,7 +224,7 @@ const Calculator = () => {
           {/* Row 1 */}
           <button
             onClick={() => inputNumber(7)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -235,7 +235,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(8)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -246,7 +246,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(9)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -257,7 +257,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={deleteLast}
-            className="h-14 rounded-lg font-bold text-lg transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-lg transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.specialKeyBg,
               color: currentTheme.textSecondary,
@@ -270,7 +270,7 @@ const Calculator = () => {
           {/* Row 2 */}
           <button
             onClick={() => inputNumber(4)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -281,7 +281,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(5)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -292,7 +292,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(6)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -303,7 +303,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => performOperation('+')}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -316,7 +316,7 @@ const Calculator = () => {
           {/* Row 3 */}
           <button
             onClick={() => inputNumber(1)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -327,7 +327,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(2)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -338,7 +338,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(3)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -349,7 +349,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => performOperation('-')}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -362,7 +362,7 @@ const Calculator = () => {
           {/* Row 4 */}
           <button
             onClick={inputDecimal}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -373,7 +373,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => inputNumber(0)}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -384,7 +384,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => performOperation('/')}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -395,7 +395,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={() => performOperation('x')}
-            className="h-14 rounded-lg font-bold text-2xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-3xl transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.keyBg,
               color: currentTheme.textPrimary,
@@ -408,7 +408,7 @@ const Calculator = () => {
           {/* Row 5 */}
           <button
             onClick={clear}
-            className="h-14 rounded-lg font-bold text-lg col-span-2 transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-lg col-span-2 transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.specialKeyBg,
               color: currentTheme.textSecondary,
@@ -419,7 +419,7 @@ const Calculator = () => {
           </button>
           <button
             onClick={handleEquals}
-            className="h-14 rounded-lg font-bold text-lg col-span-2 transition-all duration-150 hover:brightness-110 active:translate-y-1"
+            className="h-16 rounded-lg font-bold text-lg col-span-2 transition-all duration-150 hover:brightness-110 active:translate-y-1"
             style={{ 
               backgroundColor: currentTheme.equalsKeyBg,
               color: theme === 3 ? currentTheme.textPrimary : currentTheme.textSecondary,
@@ -432,6 +432,6 @@ const Calculator = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Calculator;
+export default App;
